@@ -1,0 +1,51 @@
+{% extends 'interior_layout.html' %}
+
+{% block content %}
+
+<h1>Welcome to Your Pet's Records</h1>
+<div class="records" style="margin: 0 auto;">
+
+    <table>
+  <tr> <!-- First row-->
+    <th>Feed</th>
+      <th>Pet</th>
+    <th>Time</th>
+    <th>Amount Leftover</th>
+      <th>New Amount Dispensed</th>
+            <th>Comments</th>
+  </tr>
+
+         {% for record in records %}
+    <div class="individual_record">
+  <tr>
+    <td>{{record.feedID}}</td>
+    <td>{{record.selectPet.petName}}</td>
+    <td>{{record.dateTime}}</td>
+    <td>{{record.amountLeftOver}}</td>
+    <td>{{record.amountDispensed}}</td>
+    <td>{{record.additionalInfo}}</td>
+  </tr>
+            <!-- <img src="{{ record.thumb.url }}"> -->
+    </div>
+    {% endfor %}
+    <tr>
+      <td>{{feed_id}}</td>
+      <td>{{pet_name}}</td>
+      <td>{{dateTime}}</td>
+      <td>{{bowl_weight}}</td>
+      <td>{{feed_weight}}<td>
+      <td></td>
+    </tr>
+
+</table>
+
+<div style="font-size:medium; margin: 5%; background:transparent; text-align:center;">
+    <a href="/records/create"><button>Manually enter record</button></a></div>
+
+    <img src="{{ record.thumb.url }}">
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'interior_layout.html' %}
+
+{% block content %}
+
+<h1>New Feeding Record</h1>
+<form class="site-form" action="{% url 'create' %}" style="align-text:center;" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" style="margin-top:5%;" value="Create">
+</form>
+
+{% endblock %}

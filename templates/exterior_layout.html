@@ -1,0 +1,36 @@
+{% load static from staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <meta charset="utf-8">
+        <title>Paw Patrol</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+
+        <div class="navbar">
+            <ul>
+                <li><a href="/accounts/signup">Sign Up</a></li>
+                <li><a href="/accounts/login">Login</a></li>
+            </ul>
+        </div>
+
+        <div class="wrapper" style="margin-top:-20px;">
+            <div id="logo">
+                    <a href="/"><img src="{% static 'logo.png' %}" alt="Logo"></a></div>
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    <div class="footer" style="position:fixed; left: 0; bottom: 0; width: 100%; background-color: grey; margin-top:20px; color: white; text-align: center;">
+        
+        <div id="socialMediaIcons" style="margin: 5px; display: inline-block;">
+            <a href=""><img src="/media/fb.png" width="2%" style="margin-right:7px;"></a><a href=""><img src="/media/tw.png" width="2%" style="margin-right:7px;"></a><a href=""><img src="/media/ins.png" width="2%" style="margin-right:7px;"></a></div>
+        
+        <div id="footerText" style="width:auto;">For any queries or comments please email admin@pawpatrol.com</div>
+        </div>
+
+    </body>
+</html>
